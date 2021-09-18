@@ -1,0 +1,63 @@
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  background-image: url('../images/webb.png');
+  background-repeat: repeat;
+}
+
+#outer-container{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color:rgb(44, 44, 44);
+  padding: 40px;
+}
+#console-container{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(230, 230, 230);
+  width: 280px;
+  height: 80px;
+  margin: 10px;
+}
+#image-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 280px;
+  height: 280px;
+  background-color:rgb(230, 230, 230);
+  margin: 10px;
+}
+#canvas-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 280px;
+  height: 280px;
+  background-color:rgb(230, 230, 230); 
+  margin: 10px;
+}
+#header{
+  display: flex;
+  justify-content: center;
+}
+#models{
+  width: 85px;
+  height: 21px;
+}
+#submit{
+  width: 85px;
+  height: 21px;
+}
+#input{
+  width: 85px;
+  height: 21px;
+}
