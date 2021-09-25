@@ -1,5 +1,5 @@
 var io = require('socket.io')()
-const tf = require('@tensorflow/tfjs-node-gpu');
+const tf = require('@tensorflow/tfjs-node');
 function preprocess_image(buffer_img){
     console.log(buffer_img)
     //convert bytearray to tensor
@@ -35,6 +35,7 @@ function preprocess_image(buffer_img){
             //emit back to client
             console.log(prediction)
             socket.emit('prediction', array)
+            delete array
         })
     })
 })();
