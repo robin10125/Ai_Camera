@@ -1,5 +1,5 @@
 body {
-  padding: 50px;
+  
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
   display: flex;
   align-items: center;
@@ -48,6 +48,10 @@ body {
 #header{
   display: flex;
   justify-content: center;
+  width: 360px;
+  background-color: rgb(230, 230, 230);
+  margin: 0 0 20px 0;
+  border:5px solid rgb(44, 44, 44) 
 }
 #models{
   width: 85px;

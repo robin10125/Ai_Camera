@@ -22,12 +22,10 @@ document.getElementById('input').addEventListener("change", (e) => {
             input_thumbnail.width = 256
             input_thumbnail.height = 256
         })()
-}
-    
+    }
 });
 
 document.getElementById('submit').addEventListener("click", () => {
-
    //get min to crop image by min dimension 
    const min = ((height = input.height, width = input.width) => {
         if (height > width) return width;
