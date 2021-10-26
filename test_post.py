@@ -1,7 +1,7 @@
 import requests
 import json
 import tensorflow as tf
-import numpy as np
+
 
 rand = tf.random.uniform(shape=[1,256,256,3], dtype=tf.dtypes.float32)
 rand = rand.numpy()
