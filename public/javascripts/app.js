@@ -4,6 +4,7 @@ var canvas_prediction = document.getElementById("prediction")
 const console_container = document.getElementById('console-container')
 const img_container = document.getElementById('image-container')
 const canvas_container = document.getElementById('canvas-container')
+loader = document.getElementById('loader')
 
 input.style.display = 'none'
 
@@ -28,10 +29,14 @@ document.getElementById('input').addEventListener("change", (e) => {
 
 //submit image for image translation
 document.getElementById('submit').addEventListener("click", async () => {
-   //get min to crop image by min dimension 
-   width = input.width
-   height = input.height
-   const min = ((height = input.height, width = input.width) => {
+    //create loading bar that is removed after response
+    loader.innerHTML = '<div class = loader>'
+    
+    
+    //get min to crop image by min dimension 
+    width = input.width
+    height = input.height
+    const min = ((height = input.height, width = input.width) => {
         if (height > width) return width;
         else return height; 
     }) ()
@@ -81,6 +86,7 @@ document.getElementById('submit').addEventListener("click", async () => {
         return error
         })
     
+    loader.remove()
     //convert response array to tensor, and postprocess (remove batch dim, normalize to [0,1])
     new_tensor = tf.tensor(return_data)
     new_tensor = tf.squeeze(new_tensor, axis=0)

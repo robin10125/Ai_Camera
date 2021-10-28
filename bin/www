@@ -4,8 +4,8 @@
  * Module dependencies.
  */
 
-var app = require('../app');
-var debug = require('debug')('ai-camera:server');
+var app = require('../server');
+var debug = require('debug')('ai-camera-production:server');
 var http = require('http');
 
 /**

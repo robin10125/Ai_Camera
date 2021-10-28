@@ -1,6 +1,5 @@
 var express = require('express');
 var router = express.Router();
-const tf = require('@tensorflow/tfjs-node');
 const axios = require('axios')
 /* GET home page. */
 router.get('/', function(req, res, next) {
@@ -11,14 +10,13 @@ router.get('/', function(req, res, next) {
 router.post('/image', async function(req,res,next){
 
   //get data and convert to tensor, then to array, then to JSON object
-  val = JSON.parse(JSON.stringify(req.body.instances))
-  tensor = await tf.tensor(val).array()
+  tensor = JSON.parse(JSON.stringify(req.body.instances))
   data =  JSON.stringify({"signature_name": "serving_default", "instances": tensor})
   axiosConfig = {
     headers : {"content-type": "application/json"}
     }
 
-  //POST image data to TF painter model server     
+  //POST image data to tensorflow painter model server     
   return_data = await axios
     .post('https://painter-image-gcrk6gkrcq-uc.a.run.app/v1/models/painter:predict', data, axiosConfig)
     .then(res => {
