@@ -8,7 +8,7 @@ loader = document.getElementById('loader')
 
 input.style.display = 'none'
 
-var model_select = 'impressionism'
+var model_select = 'impressionism_neural_style_transfer'
 //set model to selection
 document.getElementById('models').addEventListener('change', (e) =>{model_select = e.target.value})
 
@@ -31,7 +31,6 @@ document.getElementById('input').addEventListener("change", (e) => {
 document.getElementById('submit').addEventListener("click", async () => {
     //create loading bar that is removed after response
     loader.innerHTML = '<div class = loader>'
-    
     
     //get min to crop image by min dimension 
     width = input.width
@@ -69,6 +68,8 @@ document.getElementById('submit').addEventListener("click", async () => {
     //convert to array and JSON
     instances = await input_tensor.array()
     data =  JSON.stringify({instances})
+    exportObj= JSON.stringify({data:instances, model:model_select})
+    
     
     //POST image data to server
     axiosConfig = {
@@ -76,7 +77,7 @@ document.getElementById('submit').addEventListener("click", async () => {
         }  
      
     return_data = await axios
-      .post('/image', data, axiosConfig)
+      .post('/image', exportObj, axiosConfig)
       .then(res => {
         console.log(`statusCode: ${res.status}`)
         return res.data.image
@@ -86,7 +87,8 @@ document.getElementById('submit').addEventListener("click", async () => {
         return error
         })
     
-    loader.remove()
+        loader.innerHTML = ''
+   
     //convert response array to tensor, and postprocess (remove batch dim, normalize to [0,1])
     new_tensor = tf.tensor(return_data)
     new_tensor = tf.squeeze(new_tensor, axis=0)
