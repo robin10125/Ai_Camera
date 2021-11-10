@@ -9,7 +9,7 @@ This project uses 3 machine learning architectures, created and trained with Ten
 * [Fast-Neural-Style-Transfer](https://arxiv.org/abs/1603.08155)
 
 # Machine Learning Serving Details
-The models are served using Docker and the Tensorflow Extended Model Server Docker image.  The Docker images are hosted on Google Cloud Services, and run on Google Cloud Run.  I chose these technologies because they are the most customizable, efficient and cost effective approach I found, amongst the many techniques I tried.
+The models are served using Docker and the Tensorflow Extended Model Server Docker image.  The Docker images are hosted on Google Cloud Services, and run on Google Cloud Run.  I chose these technologies because they are the most customizable, efficient and cost effective approach I found, amongst the many options I tried.
 
 # Web App Details
 The webapp server is a NodeJS Express server, also packaged into a Docker image and hosted on Google Cloud Run.  Image preprocessing is done on the front end with Tensorflow JS, and then image data is posted to the server.  After machine learning inference, the image data postprocessing also happens on the front end.
