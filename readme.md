@@ -25,6 +25,15 @@ Python, Javascript, NodeJs, Express, Tensorflow + TFJS + TFX, Docker, Google Clo
 # TODO
 * Verification of image data before posting
 * Train Res-net models using mixed precision to surmout speed limitations 
-* Clean up webapp HTML page; make it look good
+* Clean up webapp HTML page; make it look better and more stylistic
 
-![image](https://github.com/robin10125/Ai_Camera/blob/master/screen-shot.png)
+# References to helpful tutorials for constructing models
+[Tarun Bisht's Tutorial on Fast Style Transfer](https://www.tarunbisht.com/deep%20learning/2020/12/29/neural-style-transfer-part-2-fast-style-transfer/) - Help with loss functions and data pipelining for Fast Style Transfer
+ 
+[Jason Brownlee's Cycle-Gan Tutorial](https://machinelearningmastery.com/cyclegan-tutorial-with-keras/) - Used for Res-Net model programming in Tensorflow
+# References to Academic Papers referenced for training
+Hajar Emami, Majid Moradi Aliabadi, Ming Dong and Ratna Babu Chinnam.  SPA-GAN: Spatial Attention GAN for Image-to-Image Translation https://arxiv.org/abs/1908.06616
+
+Jun-Yan Zhu, Taesung Park, Phillip Isola, Alexei A. Efros. Unpaired Image-to-Image Translation using Cycle-Consistent Adversarial Networks 	https://arxiv.org/abs/1703.10593
+
+Justin Johnson, Alexandre Alahi, Li Fei-Fei. Perceptual Losses for Real-Time Style Transfer and Super-Resolution. https://arxiv.org/abs/1603.08155
