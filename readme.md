@@ -26,3 +26,5 @@ Python, Javascript, NodeJs, Express, Tensorflow + TFJS + TFX, Docker, Google Clo
 * Verification of image data before posting
 * Train Res-net models using mixed precision to surmout speed limitations 
 * Clean up webapp HTML page; make it look good
+
+![image](https://github.com/robin10125/Ai_Camera/blob/master/screen-shot.png)
